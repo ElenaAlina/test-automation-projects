@@ -1,4 +1,4 @@
-# TEST PLAN - End-to-End automated test suites
+# TEST PLAN - End-to-End automated test suites + BASIC Security
 Application: SauceDemo
 URL: https://www.saucedemo.com
 Tool: Cypress
@@ -39,7 +39,7 @@ The scope is to validate the main functionalities of the application:
     - Browser: Chrome (also can be used with another installed browser)
     - OS: Windows
     - URL: https://www.saucedemo.com
-    - Toll: Cypress
+    - Tool: Cypress
 
 # Authentication Tests
 
