@@ -1,4 +1,4 @@
-# TEST PLAN - Functional automated test suites
+# TEST PLAN - End-to-End automated test suites
 Application: SauceDemo
 URL: https://www.saucedemo.com
 Tool: Cypress
