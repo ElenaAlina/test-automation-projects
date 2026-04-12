@@ -1,0 +1,26 @@
+{
+  "name": "test-automation-projects",
+  "version": "1.0.0",
+  "description": "Cypress projects portofolio containing test plan, test scope, test cases, test steps and more.",
+  "main": "index.js",
+  "scripts": {
+    "pre_test":"rimraf cypress/reports",
+    "test": "npm run cypress-test && npm run post_test",
+    "cypress-test": "npx cypress run --reporter mochawesome",
+    "post_test": "npm merge-reports && npm run generate-htmlreport",
+    "merge-reports": "mochawesome-merge ./cypress/reports/*.json > ./mergedreports.json",
+    "generate-htmlreport": "npx marge ./mergedreports.json --reportDir ./ --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElenaAlina/test-automation-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ElenaAlina/test-automation-projects/issues"
+  },
+  "homepage": "https://github.com/ElenaAlina/test-automation-projects#readme"
+}

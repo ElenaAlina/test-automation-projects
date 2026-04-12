@@ -1,1 +1,0 @@
-Funtional test suites.
