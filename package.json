@@ -2,14 +2,9 @@
   "name": "test-automation-projects",
   "version": "1.0.0",
   "description": "Cypress projects portofolio containing test plan, test scope, test cases, test steps and more.",
-  "main": "index.js",
+  "main": "cypress.config.js",
   "scripts": {
-    "pre_test":"rimraf cypress/reports",
-    "test": "npm run cypress-test && npm run post_test",
-    "cypress-test": "npx cypress run --reporter mochawesome",
-    "post_test": "npm merge-reports && npm run generate-htmlreport",
-    "merge-reports": "mochawesome-merge ./cypress/reports/*.json > ./mergedreports.json",
-    "generate-htmlreport": "npx marge ./mergedreports.json --reportDir ./ --inline"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
