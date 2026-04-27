@@ -28,3 +28,5 @@ describe('Login Test', () => {
       loginPage.clickLogin()
     })
 })
+//These test cases are basic ones to show the Login functionality. 
+//More advanced test cases are on the product and cart suites.

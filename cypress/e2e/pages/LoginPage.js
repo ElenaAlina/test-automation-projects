@@ -1,4 +1,7 @@
 export class LoginPage{
+    visit(){
+        cy.visit('https://www.saucedemo.com/')
+    }
     //define variables to not hardcode the values
     username = '[data-test="username"]'
     password = '[data-test="password"]'
