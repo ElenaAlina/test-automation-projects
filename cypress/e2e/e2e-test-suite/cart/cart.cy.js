@@ -71,6 +71,27 @@ describe('Cart Test Suite', () => {
         cy.get('[data-test="continue"]').should('be.visible').click()
 
         //finish the checkout process and verify the order completion
+        cy.get('[data-test="finish"]').should('be.visible').click()
+        cy.get('.complete-header').should('have.text', 'Thank you for your order!')
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('cart_item').should('have.length','0')
+    })
+
+    it('Check cart API requests', () => {
+        cy.intercept('GET', '**/inventory.html').as('inventory')
+        cy.wait('@inventory').its('response.statusCode').should('eq', 200)  //nu merge aici
+
+        //UI actions
+        cy.get('btn_inventory').first().click()
+        cy.get('.shopping_cart_link').click()
+
+        //UI check (not API)
+        cy.get('cart_item').should('have.length', '1')
+
+        //cy.intercept('POST', '**/cart').as('addToCart')
+        //cy.intercept('POST', '**/checkout*').as('checkout')
+        //cy.intercept('DELETE', '**/cart').as('removeFromCart')        
+
     })
 
 })
