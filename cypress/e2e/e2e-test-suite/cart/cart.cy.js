@@ -13,18 +13,64 @@ describe('Cart Test Suite', () => {
         })
     })
 
-    it('Add to cart', () => {   
+    it.skip('Add to cart & Remove items from cart', () => {   
         cartPage.checkProducts()
         cartPage.clickAddToCart()
         cy.get('.shopping_cart_badge').should('have.text', '1')
+
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('.shopping_cart_badge').should('have.text','2')
+
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('[data-test="continue-shopping"]').should('be.visible').click()
+
+        cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
+        cy.get('.shopping_cart_badge').should('have.text','3')
+        cy.wait(2000)
+
+        cy.get('[data-test="remove-test.allthethings()-t-shirt-(red)"]').click()
+        cy.get('.shopping_cart_badge').should('have.text','2')
+        cy.wait(2000)
+
+        cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
+        cy.get('.shopping_cart_badge').should('have.text','3')
+
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').click()
+
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').should('not.exist')
+        cy.get('[data-test="shopping-cart-badge"]')
+            .should('be.visible')
+            .and('have.text','2')
             
-
-            
-
-            //cy.get(#add-to-cart-sauce-labs-backpack').click()
-            //cy.get('.shopping_cart_badge').should('have.text', '1')
-
-        
-        
     })
+    it('Checkout process', () => {
+        //check the products and add an item to the cart
+        cartPage.checkProducts()
+        cartPage.clickAddToCart()
+        cy.get('.shopping_cart_badge').should('have.text', '1')
+        
+        //click on the cart and proceed to checkout
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('[data-test="checkout"]').should('be.visible').click()
+        
+        //add the checkout information and cancel the process
+        cy.get('[data-test="firstName"]').type('Andrew')
+        cy.get('[data-test="lastName"]').type('Doe')
+        cy.get('[data-test="postalCode"]').type('12345')
+        cy.get('[data-test="cancel"]').should('be.visible').click()
+
+        //click on the cart and proceed to checkout
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('[data-test="checkout"]').should('be.visible').click()
+
+        //add the checkout information and continue the process
+        cy.get('[data-test="firstName"]').type('Mark')
+        cy.get('[data-test="lastName"]').type('Poe')
+        cy.get('[data-test="postalCode"]').type('56789')
+        cy.get('[data-test="continue"]').should('be.visible').click()
+
+        //finish the checkout process and verify the order completion
+    })
+
 })
