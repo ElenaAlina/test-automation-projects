@@ -1,9 +1,11 @@
 import {LoginPage} from '../../pages/LoginPage.js'
 import {CartPage} from '../../pages/CartPage.js'
+import ProductsPage from '../../pages/ProductsPage.js'
 
 describe('Cart Test Suite', () => {
     const loginPage = new LoginPage()
     const cartPage = new CartPage()
+    const productsPage = new ProductsPage()
 
     beforeEach(() => {
         cy.fixture('users').then((users) => {
@@ -22,7 +24,7 @@ describe('Cart Test Suite', () => {
         cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
         cy.get('.shopping_cart_badge').should('have.text','2')
 
-        cy.get('[data-test="shopping-cart-link"]').click()
+        productsPage.goToCart()
         cy.get('[data-test="continue-shopping"]').should('be.visible').click()
 
         cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
@@ -36,7 +38,7 @@ describe('Cart Test Suite', () => {
         cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click()
         cy.get('.shopping_cart_badge').should('have.text','3')
 
-        cy.get('[data-test="shopping-cart-link"]').click()
+        productsPage.goToCart()
         cy.get('[data-test="remove-sauce-labs-bike-light"]').click()
 
         cy.get('[data-test="remove-sauce-labs-bike-light"]').should('not.exist')

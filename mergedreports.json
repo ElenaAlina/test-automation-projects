@@ -1,0 +1,394 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2026-05-04T01:37:09.613Z",
+    "end": "2026-05-04T01:38:01.713Z",
+    "duration": 52100
+  },
+  "results": [
+    {
+      "uuid": "5423d433-b121-4bce-8a6e-cba107c7dc9b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\e2e-test-suite\\auth\\login.cy.js",
+      "file": "cypress\\e2e\\e2e-test-suite\\auth\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4b26575c-2753-46b0-8d47-d67f94ea9e15",
+          "title": "Login Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Login successfully with valid credentials",
+              "fullTitle": "Login Test TC01 - Login successfully with valid credentials",
+              "timedOut": null,
+              "duration": 1647,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\nloginPage.enterUsername('standard_user');\nloginPage.enterPassword('secret_sauce');\nloginPage.clickLogin();",
+              "err": {},
+              "uuid": "a0390d28-5934-4117-b264-d343b525dca6",
+              "parentUUID": "4b26575c-2753-46b0-8d47-d67f94ea9e15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Login failed with invalid username",
+              "fullTitle": "Login Test TC02 - Login failed with invalid username",
+              "timedOut": null,
+              "duration": 1025,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\nloginPage.enterUsername('standard_user1');\nloginPage.enterPassword('secret_sauce');\nloginPage.clickLogin();",
+              "err": {},
+              "uuid": "07f7fca7-0039-48fa-9ea1-a3b514d99694",
+              "parentUUID": "4b26575c-2753-46b0-8d47-d67f94ea9e15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC03 - Login failed with invalid password",
+              "fullTitle": "Login Test TC03 - Login failed with invalid password",
+              "timedOut": null,
+              "duration": 3126,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\nloginPage.enterUsername('standard_user');\nloginPage.enterPassword('secret_sauce1');\nloginPage.clickLogin();",
+              "err": {},
+              "uuid": "761efa29-ff90-40c8-8652-fb39f19510b2",
+              "parentUUID": "4b26575c-2753-46b0-8d47-d67f94ea9e15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC04 - Login failed no credentials",
+              "fullTitle": "Login Test TC04 - Login failed no credentials",
+              "timedOut": null,
+              "duration": 332,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\nloginPage.clickLogin();",
+              "err": {},
+              "uuid": "a16412e0-4ca1-421c-b4b0-61f3fce90d92",
+              "parentUUID": "4b26575c-2753-46b0-8d47-d67f94ea9e15",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0390d28-5934-4117-b264-d343b525dca6",
+            "07f7fca7-0039-48fa-9ea1-a3b514d99694",
+            "761efa29-ff90-40c8-8652-fb39f19510b2",
+            "a16412e0-4ca1-421c-b4b0-61f3fce90d92"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6130,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f78313a1-eb64-43c5-a478-263c8c6ff93a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
+      "file": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+          "title": "Cart Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC05 - Logout after succesfully logged in",
+              "fullTitle": "Cart Test Suite TC05 - Logout after succesfully logged in",
+              "timedOut": null,
+              "duration": 2895,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#react-burger-menu-btn').click();\ncy.get('[data-test=\"logout-sidebar-link\"]').click();\ncy.url().should('include', 'saucedemo.com');\ncy.get('[data-test=\"login-button\"]').should('be.visible');",
+              "err": {},
+              "uuid": "59dcbea4-bde5-427a-9f0c-ae034846b67c",
+              "parentUUID": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59dcbea4-bde5-427a-9f0c-ae034846b67c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2895,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3c66cc56-8821-435f-a097-247de4fef734",
+      "title": "",
+      "fullFile": "cypress\\e2e\\e2e-test-suite\\cart\\cart.cy.js",
+      "file": "cypress\\e2e\\e2e-test-suite\\cart\\cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0af01259-27b1-4171-ac93-035bd37fd519",
+          "title": "Cart Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC06 - Cart UI flow",
+              "fullTitle": "Cart Test Suite TC06 - Cart UI flow",
+              "timedOut": null,
+              "duration": 6629,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cartPage.checkProducts();\ncartPage.clickAddToCart();\ncy.get('.shopping_cart_badge').should('have.text', '1');\ncy.get('[data-test=\"add-to-cart-sauce-labs-bike-light\"]').click();\ncy.get('.shopping_cart_badge').should('have.text', '2');\nproductsPage.goToCart();\ncy.get('[data-test=\"continue-shopping\"]').should('be.visible').click();\ncy.get('[data-test=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]').click();\ncy.get('.shopping_cart_badge').should('have.text', '3');\ncy.wait(2000);\ncy.get('[data-test=\"remove-test.allthethings()-t-shirt-(red)\"]').click();\ncy.get('.shopping_cart_badge').should('have.text', '2');\ncy.wait(2000);\ncy.get('[data-test=\"add-to-cart-test.allthethings()-t-shirt-(red)\"]').click();\ncy.get('.shopping_cart_badge').should('have.text', '3');\nproductsPage.goToCart();\ncy.get('[data-test=\"remove-sauce-labs-bike-light\"]').click();\ncy.get('[data-test=\"remove-sauce-labs-bike-light\"]').should('not.exist');\ncy.get('[data-test=\"shopping-cart-badge\"]').should('be.visible').and('have.text', '2');",
+              "err": {},
+              "uuid": "41ac10e8-ec91-4f13-8c2b-992ace77ee5b",
+              "parentUUID": "0af01259-27b1-4171-ac93-035bd37fd519",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC07 - Checkout process",
+              "fullTitle": "Cart Test Suite TC07 - Checkout process",
+              "timedOut": null,
+              "duration": 3510,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//check the products and add an item to the cart\ncartPage.checkProducts();\ncartPage.clickAddToCart();\ncy.get('.shopping_cart_badge').should('have.text', '1');\n//click on the cart and proceed to checkout\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('[data-test=\"checkout\"]').should('be.visible').click();\n//add the checkout information and cancel the process\ncy.get('[data-test=\"firstName\"]').type('Andrew');\ncy.get('[data-test=\"lastName\"]').type('Doe');\ncy.get('[data-test=\"postalCode\"]').type('12345');\ncy.get('[data-test=\"cancel\"]').should('be.visible').click();\n//click on the cart and proceed to checkout\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('[data-test=\"checkout\"]').should('be.visible').click();\n//add the checkout information and continue the process\ncy.get('[data-test=\"firstName\"]').type('Mark');\ncy.get('[data-test=\"lastName\"]').type('Poe');\ncy.get('[data-test=\"postalCode\"]').type('56789');\ncy.get('[data-test=\"continue\"]').should('be.visible').click();\n//finish the checkout process and verify the order completion\ncy.get('[data-test=\"finish\"]').should('be.visible').click();\ncy.get('.complete-header').should('have.text', 'Thank you for your order!');\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('cart_item').should('have.length', '0');",
+              "err": {},
+              "uuid": "cb754980-1dcb-433b-845b-9ac7205095f3",
+              "parentUUID": "0af01259-27b1-4171-ac93-035bd37fd519",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC08 - Cart badge correct behavior",
+              "fullTitle": "Cart Test Suite TC08 - Cart badge correct behavior",
+              "timedOut": null,
+              "duration": 3363,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Cart badge validation\ncy.url().should('include', 'inventory.html');\ncy.get('.btn_inventory').first().click();\ncy.get('.shopping_cart_link').click();\ncy.get('.cart_item').should('have.length', 1);\n//Cart badge increments correctly\ncy.get('[data-test=\"continue-shopping\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-bike-light\"]').click();\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('.cart_item').should('have.length', 2);\ncy.get('[data-test=\"continue-shopping\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-bolt-t-shirt\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-fleece-jacket\"]').click();\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('.cart_item').should('have.length', 4);\n//Cart badge decrements correctly\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('[data-test=\"remove-sauce-labs-backpack\"]').click();\ncy.get('.cart_item').should('have.length', 3);\ncy.get('[data-test=\"remove-sauce-labs-bolt-t-shirt\"]').click();\ncy.get('[data-test=\"remove-sauce-labs-bike-light\"]').click();\ncy.get('.cart_item').should('have.length', 1);\n//Cart persists after navigation\ncy.get('[data-test=\"continue-shopping\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-bolt-t-shirt\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-bike-light\"]').click();\ncy.get('[data-test=\"add-to-cart-sauce-labs-backpack\"]').click();\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('.cart_item').should('have.length', 4);\ncy.get('.app_logo').click();\ncy.get('[data-test=\"continue-shopping\"]').click();\ncy.get('[data-test=\"item-4-title-link\"] > [data-test=\"inventory-item-name\"]').click();\ncy.get('[data-test=\"inventory-item-desc\"]').should('be.visible');\ncy.get('[data-test=\"back-to-products\"]').click();\ncy.get('[data-test=\"item-3-title-link\"] > [data-test=\"inventory-item-name\"]').click();\ncy.get('[data-test=\"back-to-products\"]').click();\ncy.get('[data-test=\"shopping-cart-link\"]').click();\ncy.get('.cart_item').should('have.length', 4);",
+              "err": {},
+              "uuid": "b38791c4-c49a-42af-b230-a1d03ab83349",
+              "parentUUID": "0af01259-27b1-4171-ac93-035bd37fd519",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "41ac10e8-ec91-4f13-8c2b-992ace77ee5b",
+            "cb754980-1dcb-433b-845b-9ac7205095f3",
+            "b38791c4-c49a-42af-b230-a1d03ab83349"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13502,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "91920fb3-cb90-4c12-9a1f-02e2d1674662",
+      "title": "",
+      "fullFile": "cypress\\e2e\\e2e-test-suite\\products\\products.cy.js",
+      "file": "cypress\\e2e\\e2e-test-suite\\products\\products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a6deb62-b825-4fe7-8ff2-6d15c2dc4ec8",
+          "title": "Products Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC09 - Sorting Products",
+              "fullTitle": "Products Test Suite TC09 - Sorting Products",
+              "timedOut": null,
+              "duration": 3510,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').should('be.visible');\nproductsPage.sortBy('az');\ncy.get('.inventory_item_name').first().should('have.text', 'Sauce Labs Backpack');\nproductsPage.sortBy('za');\ncy.get('.inventory_item_name').first().should('have.text', 'Test.allTheThings() T-Shirt (Red)');\nproductsPage.sortBy('lohi');\ncy.get('.inventory_item_price').first().should('have.text', '$7.99');\nproductsPage.sortBy('hilo');\ncy.get('.inventory_item_price').first().should('have.text', '$49.99');",
+              "err": {},
+              "uuid": "7169f02f-9756-4d0b-aa9c-39d73f8a2bc2",
+              "parentUUID": "0a6deb62-b825-4fe7-8ff2-6d15c2dc4ec8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC10 - View product's page",
+              "fullTitle": "Products Test Suite TC10 - View product's page",
+              "timedOut": null,
+              "duration": 3281,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"product-sort-container\"]').select('az');\ncy.get('.inventory_item_name').first().should('have.text', 'Sauce Labs Backpack');\n//access an item page\ncy.get('[data-test=\"item-4-title-link\"] > [data-test=\"inventory-item-name\"]').click();\n//check if the ordinary elemnts are displayed on the page\ncy.get('.app_logo').should('be.visible');\ncy.get('[data-test=\"shopping-cart-link\"]').should('be.visible');\ncy.get('[data-test=\"back-to-products\"]').should('be.visible');\ncy.get('[data-test=\"inventory-item-name\"]').should('be.visible');\ncy.get('[data-test=\"inventory-item-desc\"]').should('be.visible');\ncy.get('[data-test=\"inventory-item-price\"]').should('be.visible');\n//visible and functional add & remove buttons\ncy.get('[data-test=\"add-to-cart\"]').should('be.visible').click();\ncy.get('[data-test=\"remove\"]').should('be.visible').click();\n//functional Back to products button\ncy.get('[data-test=\"back-to-products\"]').click();\ncy.url().should('include', 'inventory.html');",
+              "err": {},
+              "uuid": "c44a822c-bfc3-41f3-b42a-f6a47c1e429e",
+              "parentUUID": "0a6deb62-b825-4fe7-8ff2-6d15c2dc4ec8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7169f02f-9756-4d0b-aa9c-39d73f8a2bc2",
+            "c44a822c-bfc3-41f3-b42a-f6a47c1e429e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6791,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,23 +1,80 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-15T08:37:33.077Z",
-    "end": "2026-04-15T08:37:33.078Z",
-    "duration": 1,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2026-05-04T01:37:32.982Z",
+    "end": "2026-05-04T01:37:38.197Z",
+    "duration": 5215,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "f78313a1-eb64-43c5-a478-263c8c6ff93a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
+      "file": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+          "title": "Cart Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC05 - Logout after succesfully logged in",
+              "fullTitle": "Cart Test Suite TC05 - Logout after succesfully logged in",
+              "timedOut": null,
+              "duration": 2895,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#react-burger-menu-btn').click();\ncy.get('[data-test=\"logout-sidebar-link\"]').click();\ncy.url().should('include', 'saucedemo.com');\ncy.get('[data-test=\"login-button\"]').should('be.visible');",
+              "err": {},
+              "uuid": "59dcbea4-bde5-427a-9f0c-ae034846b67c",
+              "parentUUID": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59dcbea4-bde5-427a-9f0c-ae034846b67c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2895,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
