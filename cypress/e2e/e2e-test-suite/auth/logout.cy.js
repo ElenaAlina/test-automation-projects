@@ -1,15 +1,22 @@
-/*import {LogoutPage} from '../pages/logout'
+import {LoginPage} from '../../pages/LoginPage.js'
 
-const logoutPage = new LogoutPage()
+describe('Cart Test Suite', () => {
+    const loginPage = new LoginPage()
 
-describe('Logout Test', () => {
-  it('Test 1 - Logout after successfully logged in', () => {
-    cy.visit('https://www.saucedemo.com/')
-    loginPage.enterUsername('standard_user')
-    loginPage.enterPassword('secret_sauce')
-    loginPage.clickLogin()
-    
-    //logoutPage.clickLogout()
-  })
+    beforeEach(() => {
+        cy.fixture('users').then((users) => {
+            const user = users.validUser
+            
+            loginPage.visit()
+            loginPage.login(user.username, user.password)
+        })
+    })
 
-})*/
+    it('TC05 - Logout after succesfully logged in', () => {
+      cy.get('#react-burger-menu-btn').click()   
+      cy.get('[data-test="logout-sidebar-link"]').click()
+      cy.url().should('include', 'saucedemo.com')
+      cy.get('[data-test="login-button"]').should('be.visible')      
+    })
+
+})

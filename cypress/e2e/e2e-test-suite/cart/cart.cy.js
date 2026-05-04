@@ -1,19 +1,20 @@
+import {LoginPage} from '../../pages/LoginPage.js'
 import {CartPage} from '../../pages/CartPage.js'
 
 describe('Cart Test Suite', () => {
+    const loginPage = new LoginPage()
     const cartPage = new CartPage()
+
     beforeEach(() => {
         cy.fixture('users').then((users) => {
             const user = users.validUser
-            cy.visit('https://www.saucedemo.com/')
-
-            cy.get('#user-name').type(user.username)
-            cy.get('#password').type(user.password)
-            cy.get('#login-button').click()
+            
+            loginPage.visit()
+            loginPage.login(user.username, user.password)
         })
     })
 
-    it.skip('Add to cart & Remove items from cart', () => {   
+    it('TC06 - Cart UI flow', () => {   
         cartPage.checkProducts()
         cartPage.clickAddToCart()
         cy.get('.shopping_cart_badge').should('have.text', '1')
@@ -44,7 +45,7 @@ describe('Cart Test Suite', () => {
             .and('have.text','2')
             
     })
-    it('Checkout process', () => {
+    it('TC07 - Checkout process', () => {
         //check the products and add an item to the cart
         cartPage.checkProducts()
         cartPage.clickAddToCart()
@@ -77,20 +78,49 @@ describe('Cart Test Suite', () => {
         cy.get('cart_item').should('have.length','0')
     })
 
-    it('Check cart API requests', () => {
-        cy.intercept('GET', '**/inventory.html').as('inventory')
-        cy.wait('@inventory').its('response.statusCode').should('eq', 200)  //nu merge aici
-
-        //UI actions
-        cy.get('btn_inventory').first().click()
+    it('TC08 - Cart badge correct behavior', () => {
+        //Cart badge validation
+        cy.url().should('include', 'inventory.html')
+        cy.get('.btn_inventory').first().click()
         cy.get('.shopping_cart_link').click()
+        cy.get('.cart_item').should('have.length', 1)
 
-        //UI check (not API)
-        cy.get('cart_item').should('have.length', '1')
+        //Cart badge increments correctly
+        cy.get('[data-test="continue-shopping"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('.cart_item').should('have.length', 2)
+        cy.get('[data-test="continue-shopping"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click()
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('.cart_item').should('have.length', 4)
 
-        //cy.intercept('POST', '**/cart').as('addToCart')
-        //cy.intercept('POST', '**/checkout*').as('checkout')
-        //cy.intercept('DELETE', '**/cart').as('removeFromCart')        
+        //Cart badge decrements correctly
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
+        cy.get('.cart_item').should('have.length', 3)
+        cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').click()
+        cy.get('[data-test="remove-sauce-labs-bike-light"]').click()
+        cy.get('.cart_item').should('have.length', 1)
+
+        //Cart persists after navigation
+        cy.get('[data-test="continue-shopping"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('.cart_item').should('have.length', 4)
+        cy.get('.app_logo').click()
+        cy.get('[data-test="continue-shopping"]').click()
+        cy.get('[data-test="item-4-title-link"] > [data-test="inventory-item-name"]').click()
+        cy.get('[data-test="inventory-item-desc"]').should('be.visible')
+        cy.get('[data-test="back-to-products"]').click()
+        cy.get('[data-test="item-3-title-link"] > [data-test="inventory-item-name"]').click()
+        cy.get('[data-test="back-to-products"]').click()
+        cy.get('[data-test="shopping-cart-link"]').click()
+        cy.get('.cart_item').should('have.length', 4)
+
 
     })
 
