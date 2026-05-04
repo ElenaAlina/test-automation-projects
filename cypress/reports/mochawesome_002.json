@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-05-04T01:37:32.982Z",
-    "end": "2026-05-04T01:37:38.197Z",
-    "duration": 5215,
+    "start": "2026-05-04T01:55:38.656Z",
+    "end": "2026-05-04T01:55:42.456Z",
+    "duration": 3800,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f78313a1-eb64-43c5-a478-263c8c6ff93a",
+      "uuid": "187357fc-dfe0-4beb-8245-145460366df7",
       "title": "",
       "fullFile": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
       "file": "cypress\\e2e\\e2e-test-suite\\auth\\logout.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+          "uuid": "fb678ac2-33b2-4609-ad95-6c2c995703f6",
           "title": "Cart Test Suite",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC05 - Logout after succesfully logged in",
               "fullTitle": "Cart Test Suite TC05 - Logout after succesfully logged in",
               "timedOut": null,
-              "duration": 2895,
+              "duration": 1944,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('#react-burger-menu-btn').click();\ncy.get('[data-test=\"logout-sidebar-link\"]').click();\ncy.url().should('include', 'saucedemo.com');\ncy.get('[data-test=\"login-button\"]').should('be.visible');",
               "err": {},
-              "uuid": "59dcbea4-bde5-427a-9f0c-ae034846b67c",
-              "parentUUID": "4f016424-1e1f-4282-81b1-6eaf8e74197e",
+              "uuid": "f9f09caa-9f8e-4161-994b-7a0b76537cc5",
+              "parentUUID": "fb678ac2-33b2-4609-ad95-6c2c995703f6",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "59dcbea4-bde5-427a-9f0c-ae034846b67c"
+            "f9f09caa-9f8e-4161-994b-7a0b76537cc5"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2895,
+          "duration": 1944,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
